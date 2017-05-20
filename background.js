@@ -11,16 +11,14 @@ function scan(info, tab) {
 
     if (imgUrl.indexOf('data') === 0) return;
 
-    axios.get(API, {
-        params: {
-            url: imgUrl
-        }
+    axios.post(API, {
+        url: imgUrl
     }).then((res) => {
         const data = encodeURI(res.data);
         const code = `console.log("${data}")`;
         console.log(code);
         chrome.tabs.executeScript({
-            code
+            code: code
         });
     });
 }
