@@ -4,7 +4,9 @@ chrome.contextMenus.create({
   title: 'codes',
   contexts: ['image'],
   onclick: update
-}, () => {});
+}, () => {
+  console.log(window.jQuery)
+});
 
 function update(info, tab) {
   let imgUrl = info.srcUrl;
