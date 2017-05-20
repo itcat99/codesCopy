@@ -3,7 +3,7 @@
   "description": "copy codes",
   "version": "1.0.0",
   "background": {
-    "scripts": ["background.js"]
+    "scripts": ["./node_modules/axios/dist/axios.js","background.js"]
   },
   "permissions": [
     "contextMenus"
@@ -16,8 +16,5 @@
   "browser_action": {
     "name": "copy codes"
   },
-  "web_accessible_resources":[
-    "node_modules/jquery/dist/jquery.min.js"
-  ],
   "manifest_version": 2
 }
