@@ -3,8 +3,16 @@
   "description": "copy codes",
   "version": "1.0.0",
   "background": {
-    "scripts": ["background.js"]
+    "scripts": ["./node_modules/axios/dist/axios.js","background.js"]
   },
+  "permissions": [
+    "contextMenus"
+  ],
+  "content_scripts": [{
+    "matches": ["http://*/*"],
+    "css": ["./content/content.css"],
+    "js": ["./node_modules/jquery/dist/jquery.min.js", "./content/content.js"]
+  }],
   "browser_action": {
     "name": "copy codes"
   },
