@@ -5,9 +5,12 @@
   "background": {
     "scripts": ["./node_modules/axios/dist/axios.js","background.js"]
   },
-  "permissions": [
-    "contextMenus"
-  ],
+    "permissions": [
+        "activeTab",
+        "contextMenus",
+        "notifications",
+        "http://*/"
+    ],
   "content_scripts": [{
     "matches": ["http://*/*","https://*/*"],
     "css": ["./node_modules/epiceditor/epiceditor/themes/base/epiceditor.css","./content/content.css"],
