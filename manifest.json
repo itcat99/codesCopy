@@ -1,15 +1,12 @@
 {
   "name": "Codes Copy",
   "description": "copy codes",
-  "version": "1.2",
+  "version": "1.0.0",
   "background": {
     "scripts": ["background.js"]
   },
-  "permissions": [
-    "contextMenus"
-  ],
   "browser_action": {
     "name": "copy codes"
   },
-  "manifest_version": 1
+  "manifest_version": 2
 }
