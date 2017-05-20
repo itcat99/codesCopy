@@ -12,6 +12,7 @@ function scan(url, callback) {
         url: url,
         type: 'text',
     }).then(function(result) {
+        console.log(result.results.rectangles)
         callback(result);
     }).catch(function(err) {
         console.log('err', err);
@@ -19,6 +20,7 @@ function scan(url, callback) {
 }
 app.post('/', jsonParser, function(req, res) {
     const url = req.body.url;
+    console.log(url) 
     if (typeof url === 'undefined') return;
 
     scan(url, (result) => {

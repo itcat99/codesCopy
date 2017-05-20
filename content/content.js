@@ -19,15 +19,25 @@ $(function () {
 			<form action="" method="post" id="editForm">
 				&nbsp;&nbsp;<h3>代码工具</h3>
 				<ul class="editInfos">
-				<li><textarea name="reworkmes" cols="60"  rows="6" style="OVERFLOW: hidden"></textarea>	</li>
+				<li><textarea id="codesCopyInput" name="reworkmes" cols="60"  rows="6" style="OVERFLOW: hidden"></textarea>	</li>
 				</ul>
 			</form>
 		</div>
 	</div>
 	
-</div>`
+</div>
+<script>
+  function show(data) {
+    let $codesCopy = $('#codesCopy');
+    let input = $codesCopy.find('textarea');
 
-$('body').append(template);
+    $codesCopy.addClass('codesCopy-show');
+    $input.val(data);
+  }
+</script>
+`
+
+  $('body').append(template);
 });
 
 function getSrceenWH() {
@@ -44,11 +54,9 @@ $(window).resize();
 $(function () {
   getSrceenWH();
 
-  $('.box a').click(function () {
-    className = $(this).attr('class');
-    $('#dialogBg').fadeIn(300);
-    $('#dialog').removeAttr('class').addClass('animated ' + className + '').fadeIn();
-  });
+  className = $(this).attr('class');
+  $('#dialogBg').fadeIn(300);
+  $('#dialog').removeAttr('class').addClass('animated ' + className + '').fadeIn();
 
   $('.claseDialogBtn').click(function () {
     $('#dialogBg').fadeOut(300, function () {
