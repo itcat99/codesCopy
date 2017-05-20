@@ -1,4 +1,4 @@
-const API = 'https://api.ocr.space/parse/imageurl';
+const API = 'https://localhost:3000';
 
 chrome.contextMenus.create({
   title: 'codes',
@@ -15,7 +15,6 @@ function update(info, tab) {
 
   const res = axios.get(API, {
     params: {
-      apikey: '2feae35e4188957',
       url: imgUrl
     }
   });
