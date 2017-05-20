@@ -1,22 +1,29 @@
 var express = require('express');
+var bodyParser = require('body-parser');
 var app = express();
 
 var ak = 'b7d11214c8fc452db3de12028cf46daa';
 var sk = '64631fe987f4423bb0a117101bf90a45'
 var ocr = require('baidu-ocr-api').create(ak, sk);
+var jsonParser = bodyParser.json();
 
-app.get('/', function(req, res) {
-    const url = req.query.url;
-    if (typeof url === 'undefined') return;
+function scan(url, callback) {
     ocr.scan({
         url: url,
         type: 'text',
     }).then(function(result) {
-        console.log(result);
-        res.send(result.results.words);
+        callback(result);
     }).catch(function(err) {
         console.log('err', err);
     })
+}
+app.post('/', jsonParser, function(req, res) {
+    const url = req.body.url;
+    if (typeof url === 'undefined') return;
+
+    scan(url, (result) => {
+        res.send(result.results.words);
+    });
 });
 
 var server = app.listen(3001, function() {

@@ -24,7 +24,11 @@
   "dependencies": {
     "axios": "^0.16.1",
     "baidu-ocr-api": "^2.0.5",
+<<<<<<< HEAD
     "epiceditor": "^0.2.0",
+=======
+    "body-parser": "^1.17.2",
+>>>>>>> 1a10fc084ca9b6c0c4f01a3866c09c950a849e5f
     "express": "^4.15.3",
     "jquery": "^3.2.1"
   }
