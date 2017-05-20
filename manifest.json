@@ -5,8 +5,19 @@
   "background": {
     "scripts": ["background.js"]
   },
+  "permissions": [
+    "contextMenus"
+  ],
+  "content_scripts": [{
+    "matches": ["http://*/*"],
+    "css": ["./content/content.css"],
+    "js": ["./node_modules/jquery/dist/jquery.min.js", "./content/content.js"]
+  }],
   "browser_action": {
     "name": "copy codes"
   },
+  "web_accessible_resources":[
+    "node_modules/jquery/dist/jquery.min.js"
+  ],
   "manifest_version": 2
 }
