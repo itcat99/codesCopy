@@ -23,6 +23,7 @@
   "homepage": "https://github.com/itcat99/codesCopy#readme",
   "dependencies": {
     "axios": "^0.16.1",
+    "baidu-ocr-api": "^2.0.5",
     "express": "^4.15.3",
     "jquery": "^3.2.1"
   }
