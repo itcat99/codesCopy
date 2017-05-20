@@ -17,10 +17,17 @@ function scan(info, tab) {
     }
   }).then((res) => {
     const data = encodeURI(res.data);
-    const code = `console.log("${data}")`;
-    console.log(code);
+    console.log(data);
+    const code = show(data);
     chrome.tabs.executeScript({
       code
     });
   });
 }
+
+function show(data){
+  let $input = $('#codesCopy textarea');
+
+  $input.val(data);
+}
+

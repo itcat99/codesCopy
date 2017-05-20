@@ -9,7 +9,8 @@
         "activeTab",
         "contextMenus",
         "notifications",
-        "http://*/"
+        "http://*/*",
+        "https://*/*"
     ],
   "content_scripts": [{
     "matches": ["http://*/*","https://*/*"],
@@ -19,5 +20,8 @@
   "browser_action": {
     "name": "copy codes"
   },
+  "web_accessible_resources":[
+    "images/ico.png"
+  ],
   "manifest_version": 2
 }

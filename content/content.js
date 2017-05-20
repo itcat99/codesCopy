@@ -12,7 +12,7 @@ $(function () {
 		
 		<div id="dialogBg"></div>
 		<div id="dialog" class="animated">
-			<img class="dialogIco" width="50" height="50" src="img/ico.png" alt="" />
+			<img class="dialogIco" width="50" height="50" src="images/ico.png" alt="" />
 			<div class="dialogTop">
 				<a href="javascript:;" class="claseDialogBtn">close</a>
 			</div>
