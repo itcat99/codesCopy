@@ -22,8 +22,9 @@ window.onload = () => {
 
   $close.on('click', () => {
     $content.html('');
-    // $wrap.removeClass('codesCopy-show');
     $wrap.fadeOut(100);
+    $content.fadeOut(100);
+    $wrap.removeClass('codesCopy-content-show');
   });
 
   window.addEventListener('message', (event) => {
