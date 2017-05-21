@@ -14,7 +14,7 @@
     ],
   "content_scripts": [{
     "matches": ["http://*/*","https://*/*"],
-    "css": ["./node_modules/epiceditor/epiceditor/themes/base/epiceditor.css","./content/content.css"],
+    "css": ["./node_modules/epiceditor/epiceditor/themes/base/epiceditor.css","./content/content.css","./node_modules/csspin/css/csspin-round.css"],
     "js": ["./node_modules/jquery/dist/jquery.min.js", "./node_modules/epiceditor/epiceditor/js/epiceditor.min.js","./content/content.js"]
   }],
   "browser_action": {
