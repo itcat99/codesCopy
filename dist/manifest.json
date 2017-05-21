@@ -1,0 +1,26 @@
+{
+  "name": "Codes Copy",
+  "description": "copy codes",
+  "version": "1.0.0",
+  "background": {
+    "scripts": ["./libs/tesseract.js", "background.js"]
+  },
+  "permissions": [
+    "activeTab",
+    "tabs",
+    "contextMenus",
+    "notifications",
+    "http://*/*",
+    "https://*/*"
+  ],
+  "content_scripts": [{
+    "matches": ["http://*/*", "https://*/*"],
+    "css": ["./content/content.css", "./libs/csspin-round.css", "./libs/codemirror/codemirror.css", "./libs/codemirror/theme/zenburn.css"],
+    "js": ["./libs/jquery.min.js", "./libs/codemirror/codemirror.js", "./libs/codemirror/supports/active-line.js", "./libs/codemirror/supports/matchbrackets.js", "./libs/codemirror/languages/javascript.js", "./content/content.js"]
+  }],
+  "browser_action": {
+    "name": "copy codes"
+  },
+  "content_security_policy": "script-src 'self' 'unsafe-eval' https://cdn.rawgit.com/naptha/; object-src 'self'",
+  "manifest_version": 2
+}

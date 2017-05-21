@@ -1,0 +1,65 @@
+#codesCopy {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  display: none;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  text-align: center;
+  background-color: rgba(0, 0, 0, .5);
+  .codesCopy-title {
+    padding: 30px;
+    font-size: 28px;
+  }
+  .codesCopy-body {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    align-items: center;
+  }
+  .codesCopy-close {
+    position: absolute;
+    top: 100px;
+    right: 100px;
+    box-sizing: border-box;
+    width: 20px;
+    height: 20px;
+    padding: 2px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #515151;
+    border: 1px solid #fff;
+    transition: all .1s;
+    &:hover {
+      cursor: pointer;
+      background-color: lightcoral;
+      transition: all .1s;
+    }
+  }
+  .codesCopy-content {
+    display: none;
+    width: 50%;
+    height: 50%;
+    padding: 14px;
+    color: #fff;
+    background-color: #515151;
+    border: 1px solid #fff;
+    text-align: left;
+    .CodeMirror {
+      height: 100%;
+    }
+  }
+  .codesCopy-loading {
+    color: #fff;
+    text-align: center;
+  }
+  &.codesCopy-show {
+    display: flex;
+  }
+  &.codesCopy-content-show .codesCopy-loading {
+    display: none;
+  }
+}

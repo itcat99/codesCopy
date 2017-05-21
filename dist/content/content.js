@@ -9,7 +9,7 @@ window.onload = () => {
           <div class="cp-spinner cp-round"></div>
           <p>Loading...</p>
         </div>
-        <textarea class="codesCopy-content"></textarea>
+        <div class="codesCopy-content"></div>
       </div>
     </section>
     `
@@ -18,6 +18,14 @@ window.onload = () => {
   let $wrap = $('body').find('#codesCopy');
   let $close = $wrap.find('.codesCopy-close');
   let $content = $wrap.find('.codesCopy-content');
+  let codeBlock = CodeMirror($content[0], {
+    theme: 'zenburn',
+    tabSize: 2,
+    lineNumbers: true,
+    styleActiveLine: true,
+    matchBrackets: true,
+    mode:  "javascript"
+  });
 
   $close.on('click', () => {
     $content.html('');
@@ -39,7 +47,7 @@ window.onload = () => {
       console.log(data);
       $wrap.addClass('codesCopy-content-show');
       $content.fadeIn();
-      $content[0].value = data;
+      codeBlock.doc.setValue(data);
     }
   }, false);
 }

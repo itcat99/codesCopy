@@ -1,7 +1,6 @@
 const API = 'http://localhost:3001';
 const tesseract = window.Tesseract;
 
-console.log(tesseract);
 // console.log(chrome.runtime.getURL('images/fre.png'))
 
 chrome.contextMenus.create({
