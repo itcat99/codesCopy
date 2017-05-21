@@ -1,7 +1,5 @@
 const API = 'http://localhost:3001';
 const tesseract = window.Tesseract;
-// tesseract.workerOptions.workerPath = chrome.runtime.getURL('./node_modules/tesseract.js/dist/worker.js');
-// tesseract.workerOptions.corePath = chrome.runtime.getURL('./node_modules/tesseract.js-core/index.js');
 
 console.log(tesseract);
 // console.log(chrome.runtime.getURL('images/fre.png'))
@@ -15,32 +13,29 @@ chrome.contextMenus.create({
 function scan(info, tab) {
   let imgUrl = info.srcUrl;
 
-  if (imgUrl.indexOf('data') === 0) return;
+  // if (imgUrl.indexOf('data') === 0) return;
+  sendMessage('codesCopy-init');
 
   tesseract.recognize(imgUrl)
     .then((result) => {
       console.log('successed!');
       console.log(result);
+      let data = result.text;
 
-      let value = result.text;
-      let data = JSON.stringify({
-        "type":"codes-copy",
-        "value": value
-      });
-      chrome.tabs.executeScript({
-        code: `window.postMessage(${data}, "*")`
-      });
+      sendMessage('codesCopy-codes', data);
     });
+}
 
-  // axios.post(API, {
-  //   url: imgUrl
-  // }).then((res) => {
-  //   console.log(res.data);
-  //   const data = encodeURI(res.data);
-  //   const code = `document.getElementById("codesCopy").style.display = "block"; document.getElementById("codesCopyInput").value = decodeURI("${data}")`;
-  //   console.log(code);
-  //   chrome.tabs.executeScript({
-  //     code: code
-  //   });
-  // });
+/* Util Methods */
+function sendMessage(type, data = null) {
+  const value = data ? unescape(data) : '';
+
+  const code = JSON.stringify({
+    "type": type,
+    "value": value
+  });
+
+  chrome.tabs.executeScript({
+    code: `window.postMessage(${code},"*");`
+  });
 }
