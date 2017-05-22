@@ -3,7 +3,8 @@
   "description": "copy codes",
   "version": "1.0.0",
   "background": {
-    "scripts": ["./libs/tesseract.js", "background.js"]
+    // "scripts": ["./libs/tesseract.js", "background.js"]
+    "page":"./background.html"
   },
   "permissions": [
     "activeTab",

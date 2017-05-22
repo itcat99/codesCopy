@@ -42,6 +42,11 @@ gulp.task('copy', () => {
   // codeMirror Plugin Languages
   gulp.src(['./node_modules/codemirror/mode/javascript/javascript.js'])
     .pipe(gulp.dest(path.resolve(libsPath, 'codemirror/languages')));
+
+
+  // Cropperjs Plugin
+  gulp.src(['./node_modules/cropperjs/dist/cropper.min.js', './node_modules/cropperjs/dist/cropper.min.css'])
+    .pipe(gulp.dest(path.resolve(libsPath, 'cropperjs')));
 });
 
 /*

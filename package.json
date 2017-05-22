@@ -23,6 +23,7 @@
   "homepage": "https://github.com/itcat99/codesCopy#readme",
   "dependencies": {
     "codemirror": "^5.25.2",
+    "cropperjs": "^1.0.0-rc.1",
     "csspin": "^1.1.4",
     "jquery": "^3.2.1",
     "tesseract.js": "^1.0.10"

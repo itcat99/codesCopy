@@ -63,3 +63,11 @@
     display: none;
   }
 }
+
+.codesCopy-selector {
+  display: none;
+  border: 1px dashed #ccc;
+  background: rgba(0, 0, 0, .2);
+  position: absolute;
+  z-index: 99999;
+}
